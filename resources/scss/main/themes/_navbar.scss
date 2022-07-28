@@ -1,0 +1,18 @@
+.nav-item-notifications {
+  .btn-bell {
+    position: relative;
+    .dot {
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0.25rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background: $danger;
+    }
+  }
+  .card-notifications {
+    width: 18rem;
+  }
+}

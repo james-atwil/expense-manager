@@ -1,0 +1,96 @@
+$navbar-height: $navbar-brand-height + ($navbar-brand-padding-y * 2) + ($navbar-padding-y * 2);
+
+[v-cloak] {
+  display: none !important;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+  margin-top: $navbar-height;
+
+}
+
+main {
+  min-height: calc(100vh - #{$navbar-height});
+}
+
+
+
+//
+// Transitions
+//
+
+.fade-out {
+    transition: all 500ms ease-in-out;
+    opacity: 0
+}
+
+//
+// Semibold
+//
+.fw-semibold {
+  font-weight: 500 !important;
+}
+
+//
+// Avatar
+//
+
+.avatar {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+
+  .avatar-letters {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+//
+// Breadcrumb
+//
+#breadcrumb {
+  padding: 0.75rem 1rem;
+  background: $gray-200;
+  border-bottom: 0.0625rem solid $gray-300;
+  .breadcrumb {
+    margin: 0;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+//
+// Testing
+//
+
+.bs-docs-section {
+  margin-top: 4em;
+}
+
+.bs-component {
+  position: relative;
+
+  .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    z-index: 1;
+    display: block;
+  }
+}

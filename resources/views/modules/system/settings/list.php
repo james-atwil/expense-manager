@@ -1,0 +1,1 @@
+window.bbxca.settings = <?php echo json_encode($settings); ?>;

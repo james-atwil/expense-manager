@@ -1,0 +1,181 @@
+.sidebar.offcanvas {
+  width: 18rem;
+}
+
+.sidebar-content {
+  .profile {
+    background-color: shade-color($primary, 10%);
+  }
+
+  .navigation {
+    ul {
+      list-style-type: none;
+    }
+
+    .nav-link {
+      display: block;
+      padding: $nav-link-padding-y $nav-link-padding-x;
+      cursor: pointer;
+    }
+
+    .nav-has-child > .nav-link::before {
+      content: '\f107';
+      display: block;
+      position: absolute;
+      right: 1rem;
+      font-family: 'Font Awesome 5 Free', monospace;
+      font-weight: 900;
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+    }
+
+    .nav-has-child > .nav-link.collapsed::before {
+      content: '\f105';
+    }
+
+    .nav-sub {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .nav-item {
+        .nav-link {
+          padding-left: 3rem;
+          position: relative;
+
+          &::before {
+            content: '\f111';
+            display: block;
+            position: absolute;
+            left: 1.8rem;
+            font-family: 'Font Awesome 5 Free', monospace;
+            font-weight: 900;
+            font-size: 6px;
+            line-height: 1.5rem;
+          }
+        }
+
+        &.nav-has-child > .nav-link::before {
+          content: '\f107';
+          font-size: 0.8rem;
+        }
+
+        &.nav-has-child > .nav-link.collapsed::before {
+          content: '\f105';
+        }
+
+        .nav-sub {
+          .nav-item {
+            .nav-link {
+              padding-left: 4.3rem;
+
+              &::before {
+                left: 3.1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Sidebar themes
+//
+// Styles for switching between sidebars with light or dark background.
+
+// Dark links against a light background
+.sidebar-light {
+  .navigation {
+    .nav-link {
+      color: $navbar-light-color;
+
+      &:hover,
+      &:focus {
+        color: $navbar-light-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-light-disabled-color;
+      }
+    }
+
+    .show > .nav-link,
+    .nav-link.active {
+      color: $navbar-light-active-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-light-color;
+    border-color: $navbar-light-toggler-border-color;
+  }
+
+  .navbar-toggler-icon {
+    background-image: escape-svg($navbar-light-toggler-icon-bg);
+  }
+
+  .navbar-text {
+    color: $navbar-light-color;
+
+    a,
+    a:hover,
+    a:focus {
+      color: $navbar-light-active-color;
+    }
+  }
+}
+
+// White links against a dark background
+.sidebar-dark {
+  .navigation {
+    .nav-link {
+      color: $navbar-dark-color;
+
+      &:hover,
+      &:focus {
+        color: $navbar-dark-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-dark-disabled-color;
+      }
+    }
+
+    .show > .nav-link,
+    .nav-link.active {
+      color: $navbar-dark-active-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-dark-color;
+    border-color: $navbar-dark-toggler-border-color;
+  }
+
+  .navbar-toggler-icon {
+    background-image: escape-svg($navbar-dark-toggler-icon-bg);
+  }
+
+  .navbar-text {
+    color: $navbar-dark-color;
+
+    a,
+    a:hover,
+    a:focus {
+      color: $navbar-dark-active-color;
+    }
+  }
+}
+
+
+
+.roll-enter-active, .roll-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.roll-enter-from, .roll-leave-to {
+  overflow: hidden;
+  opacity: 0;
+}
